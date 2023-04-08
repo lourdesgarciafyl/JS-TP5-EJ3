@@ -19,12 +19,13 @@
 
     </header>
     <main>
-        <section class="container mt-4">
+        <section class="container mt-4" id="contenedorPadreLista">
             <h1 class="text-center">Crea tu lista de tareas</h1>
             <p>Agregá las tareas que tenés pendientes y eliminalas cuando las vayas completando</p>
             <div class="text-center my-3">
-                <form class="d-flex">
+                <form class="d-flex" id="formAgregar">
                     <input
+                    id="inputAgregar"
                     class="form-control me-2"
                     type="text"
                     placeholder="Ejemplo: ordenar la habitación"
@@ -32,23 +33,24 @@
                     maxlength="50"
                     required
                   />
-                    <button class="btn btn-outline-dark" type="submit">
+                    <button class="btn btn-outline-dark" type="submit" id="btnAgregar">
                       Agregar a la lista!
                     </button>
                   </form>
             </div>
+            <div id="listaDeTareas">
+              <h2 class="text-center">Tareas pendientes</h2>
+              <ul>
+  
+              </ul>
+            </div>
         </section>
-        <section class="container" id="listaDeTareas">
-            <h2 class="text-center">Tareas pendientes</h2>
-            <ul>
-
-            </ul>
-        </section>
-        <section class="container mt-2">
+        <section class="container mt-2" id="contenedorPadreListaNueva">
             <h2 class="text-center">Tareas a eliminar</h2>
             <div>
-                <form class="d-flex">
+                <form class="d-flex" id="formEliminar">
                     <input
+                    id="inputEliminar"
                     class="form-control me-2"
                     type="text"
                     placeholder="Ejemplo: ordenar la habitación"
@@ -56,7 +58,7 @@
                     maxlength="50"
                     required
                   />
-                    <button class="btn btn-outline-danger" type="submit">
+                    <button class="btn btn-outline-danger" type="submit" id="btnEliminar">
                       Eliminar!
                     </button>
                   </form>
