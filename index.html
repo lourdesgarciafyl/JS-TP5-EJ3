@@ -19,6 +19,49 @@
 
     </header>
     <main>
+        <section class="container mt-4">
+            <h1 class="text-center">Crea tu lista de tareas</h1>
+            <p>Agregá las tareas que tenés pendientes y eliminalas cuando las vayas completando</p>
+            <div class="text-center my-3">
+                <form class="d-flex">
+                    <input
+                    class="form-control me-2"
+                    type="text"
+                    placeholder="Ejemplo: ordenar la habitación"
+                    minlength="8"
+                    maxlength="50"
+                    required
+                  />
+                    <button class="btn btn-outline-dark" type="submit">
+                      Agregar a la lista!
+                    </button>
+                  </form>
+            </div>
+        </section>
+        <section class="container" id="listaDeTareas">
+            <h2 class="text-center">Tareas pendientes</h2>
+            <ul>
+
+            </ul>
+        </section>
+        <section class="container mt-2">
+            <h2 class="text-center">Tareas a eliminar</h2>
+            <div>
+                <form class="d-flex">
+                    <input
+                    class="form-control me-2"
+                    type="text"
+                    placeholder="Ejemplo: ordenar la habitación"
+                    minlength="8"
+                    maxlength="50"
+                    required
+                  />
+                    <button class="btn btn-outline-danger" type="submit">
+                      Eliminar!
+                    </button>
+                  </form>
+            </div>
+        </section>
     </main>
     <footer>
 

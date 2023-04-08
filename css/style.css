@@ -1,0 +1,16 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex-grow: 1;
+}
+h1{
+    color: rgb(255, 127, 80);
+    font-size: xx-large;
+}
+h2{
+    font-size: x-large;
+    color: coral;
+}
