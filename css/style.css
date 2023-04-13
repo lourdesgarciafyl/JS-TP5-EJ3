@@ -2,15 +2,19 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #cc2b5e;  
+    background: -webkit-linear-gradient(to top, #753a88, #cc2b5e);  
+    background: linear-gradient(to top, #753a88, #cc2b5e); 
+
 }
 main{
     flex-grow: 1;
 }
 h1{
-    color: rgb(255, 127, 80);
+    color: black ;
     font-size: xx-large;
 }
 h2{
     font-size: x-large;
-    color: coral;
+    color: black;
 }
