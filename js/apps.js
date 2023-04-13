@@ -1,62 +1,29 @@
 let listaTareas = [];
-let btnAgregar = document.getElementById(`btnAgregar`)
-let btnEliminar = document.getElementById(`btnEliminar`)
+let contenedorForm = document.querySelector(`#contenedorForm`)
 let formAgregar = document.getElementById(`formAgregar`)
+let contenedorLista = document.querySelector(`#listaDeTareas`)
 formAgregar.addEventListener(`submit`, trabajarLista )
-let formEliminar = document.getElementById(`formEliminar`)
-formEliminar.addEventListener(`submit`, trabajarFormEliminar)
-
-/*
-class ListaTareas{
-    #tareas
-    constructor(tareas){
-        this.#tareas = []
-    }
-    get mostrarTareas(){
-        return this.#tareas
-    }
-    set cambiarListaTareas(nuevaLista){
-        this.#tareas = nuevaLista
-    }
-
-    agregarTarea(nuevaTarea){
-        this.mostrarTareas.push(nuevaTarea)
-    }
-    eliminarTarea(tareaAEliminar){
-        let nuevaListaTareas = this.mostrarTareas.filter(tarea => tarea.mostrarTareas !== tareaAEliminar)
-        this.cambiarListaTareas = nuevaListaTareas
-    }
-}
-*/
 
 function trabajarLista(e){
-    let contenedorPadreLista = document.getElementById(`contenedorPadreLista`)
-//    console.log(contenedorPadreLista)
-
     e.preventDefault()
     let tareaAgregada = document.getElementById(`inputAgregar`).value
-    console.log(tareaAgregada)
+//    console.log(tareaAgregada)
     listaTareas.push(tareaAgregada)
-    console.log(listaTareas)
-
-    let tareaNueva = document.createElement(`li`)
-    tareaNueva.innerHTML = tareaAgregada
-    tareaNueva.className = `text-black`
-    contenedorPadreLista.appendChild(tareaNueva)
+//    console.log(listaTareas)
+    agregarTarea(tareaAgregada, listaTareas.length - 1) 
     formAgregar.reset()
 }
 
-function trabajarFormEliminar(e){
-    let contenedorPadreListaNueva = document.getElementById(`contenedorPadreListaNueva`)
-
-    e.preventDefault();
-    let inputEliminar = document.getElementById(`inputEliminar`).value
-    console.log(inputEliminar)
-    
-    let nuevaListaTareas = listaTareas.filter(tarea => tarea !== inputEliminar)
-    let listaFiltrada = document.createElement(`li`)
-    listaFiltrada.innerHTML = nuevaListaTareas
-    listaFiltrada.className = `text-black`
-    contenedorPadreListaNueva.appendChild(listaFiltrada)
-    formEliminar.reset()
+function agregarTarea(tareaNueva, posicion){
+    contenedorLista.innerHTML += `<li class="list-group-item d-flex justify-content-between my-1"><p>${tareaNueva}</p>
+    <button class="btn btn-outline-danger" onclick="eliminarTarea(${posicion})"><i class="bi bi-x-square-fill"></i></button>    
+    </li>`
 }
+
+function eliminarTarea(lugar){
+    listaTareas.splice(lugar, 1)
+    contenedorLista.innerHTML = ``
+    listaTareas.forEach((tareaNueva, posicion) => agregarTarea(tareaNueva, posicion))
+}
+
+
